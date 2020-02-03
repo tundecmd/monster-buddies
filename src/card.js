@@ -1,5 +1,4 @@
 import React from 'react';
-import { robots } from './robots';
 
 const Card = ({id, name, email}) => {
   return (
