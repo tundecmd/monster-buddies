@@ -16,8 +16,6 @@ class App extends Component {
   }
   onSearchChange = event => {
     this.setState({searchfield: event.target.value})
-    
-    //console.log(filteredMonsters);
   }
   render() {
     const filteredMonsters = this.state.monsters.filter(monster => {
@@ -25,7 +23,7 @@ class App extends Component {
     });
     return (
       <div className='tc'>
-        <h1>Monster Buddies!!!</h1>
+        <h1 className='f1'>Monster Buddies!!!</h1>
         <SearchBox searchChange={this.onSearchChange} />
         <CardList monsters={filteredMonsters}/>
       </div>
