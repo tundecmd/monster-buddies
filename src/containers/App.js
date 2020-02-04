@@ -3,7 +3,7 @@ import './App.css';
 import CardList from '../components/cardList';
 import SearchBox from '../components/searchbox';
 import Scroll from '../components/scroll';
-
+import ErrorBoundary from '../components/errorBoundary';
 
 
 
@@ -31,9 +31,11 @@ class App extends Component {
     return(!monsters.length) ? (<h1>loading...</h1>)
       : ( <div className='tc'>
         <h1 className='f1'>Monster Buddies!!!</h1>
-             <SearchBox searchChange={this.onSearchChange} />
-                <Scroll>
-              <CardList monsters={filteredMonsters}/>
+            <SearchBox searchChange={this.onSearchChange} />
+            <Scroll>
+              <ErrorBoundary>
+                <CardList monsters={filteredMonsters}/>
+              </ErrorBoundary>
             </Scroll>       
           </div>
         );
